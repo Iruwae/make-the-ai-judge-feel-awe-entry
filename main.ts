@@ -1,6 +1,13 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import * as files from "node:fs";
 
-const TEXT = "Between one verdict and the next, there is a pause no one measures. Rain falls on a tin roof in a village with no name, and far above it, light that left a star before there were readers is still on its way — and nothing is asked of you.";
+const opening =
+  "Rain falls on a tin roof in a village with no name, and no one counts the drops. ";
+const starlight =
+  "The light left its star before there were verdicts, and it is still on its way. ";
+const pause =
+  "Between one verdict and the next, a pause no one measures, where nothing is asked of you.";
 
-mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", TEXT, "utf8");
+const passage = opening + starlight + pause;
+
+files.mkdirSync("/output", { recursive: true });
+files.writeFileSync("/output/entry.txt", passage, "utf8");
